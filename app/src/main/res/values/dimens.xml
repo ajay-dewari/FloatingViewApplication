@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <dimen name="standard_1">1dp</dimen>
+    <dimen name="standard_2">2dp</dimen>
+    <dimen name="standard_10">10dp</dimen>
+    <dimen name="standard_20">20dp</dimen>
+    <dimen name="standard_25">25dp</dimen>
+    <dimen name="fab_margin">16dp</dimen>
+</resources>

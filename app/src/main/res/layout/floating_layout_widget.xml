@@ -1,0 +1,141 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content">
+
+    <!--Root container-->
+    <RelativeLayout
+        android:id="@+id/root_container"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        tools:ignore="UselessParent">
+
+        <!--View while view is collapsed-->
+        <RelativeLayout
+            android:id="@+id/collapse_view"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:visibility="visible">
+
+            <!--Icon of floating widget -->
+
+<!--            <com.google.android.material.floatingactionbutton.FloatingActionButton
+                android:id="@+id/collapsed_iv"
+                android:layout_width="60dp"
+                android:layout_height="60dp"
+                android:layout_margin="@dimen/fab_margin"
+                android:layout_marginTop="8dp"
+                app:srcCompat="@android:drawable/ic_dialog_email" />-->
+
+            <ImageView
+                android:id="@+id/collapsed_iv"
+                android:layout_width="60dp"
+                android:layout_height="60dp"
+                android:layout_marginTop="8dp"
+                android:scaleType="centerInside"
+                android:background="@drawable/shape_wagon_selected"
+                android:src="@drawable/add_location"
+                tools:ignore="ContentDescription"/>
+
+            <!--current position indicator-->
+            <TextView
+                android:id="@+id/current_position_indicator"
+                android:layout_width="20dp"
+                android:layout_height="20dp"
+                android:layout_marginLeft="40dp"
+                android:textColor="@android:color/black"
+                android:gravity="center"
+                android:background="@drawable/shape_wagon_selected_light"
+                tools:ignore="ContentDescription" />
+
+        </RelativeLayout>
+
+        <!--View while view is expanded-->
+        <RelativeLayout
+            android:id="@+id/expanded_container"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@android:color/white"
+            android:orientation="horizontal"
+            android:padding="8dp"
+            android:visibility="gone">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/standard_25"
+                android:text="@string/service_available"
+                android:textColor="@android:color/black" />
+
+            <Switch
+                android:id="@+id/service_available_switch"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentRight="true"
+                android:layout_marginRight="@dimen/standard_25"
+                android:thumbTint="@color/status_bar_color_for_sncf" />
+
+            <View
+                android:id="@+id/divider"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/standard_1"
+                android:layout_below="@+id/service_available_switch"
+                android:layout_marginTop="@dimen/standard_25"
+                android:layout_marginBottom="@dimen/standard_25"
+                android:background="@android:color/darker_gray" />
+
+            <RelativeLayout
+                android:id="@+id/wagon_positions_layout"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/divider"
+                android:visibility="gone">
+
+                <TextView
+                    android:id="@+id/title_label"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="@dimen/standard_25"
+                    android:text="@string/select_your_current_position"
+                    android:textAppearance="@android:style/TextAppearance.DeviceDefault.Large"
+                    android:textColor="@android:color/black" />
+
+                <Switch
+                    android:id="@+id/fixed_switch"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentRight="true"
+                    android:layout_marginRight="@dimen/standard_25"
+                    android:text="@string/fixed"
+                    android:textColor="@android:color/black"
+                    android:thumbTint="@color/status_bar_color_for_sncf" />
+
+                <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/wagons_recyclerview"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/title_label"
+                    android:layout_margin="@dimen/standard_20" />
+            </RelativeLayout>
+
+            <Button
+                android:id="@+id/confirm"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/wagon_positions_layout"
+                android:layout_marginLeft="@dimen/standard_25"
+                android:layout_marginRight="@dimen/standard_25"
+                android:layout_marginBottom="@dimen/standard_25"
+                android:backgroundTint="@color/status_bar_color_for_sncf"
+                android:enabled="true"
+                android:gravity="center"
+                android:text="@string/course_selection_confirm"
+                android:textColor="@android:color/white" />
+
+        </RelativeLayout>
+    </RelativeLayout>
+</FrameLayout>

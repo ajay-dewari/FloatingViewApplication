@@ -1,0 +1,14 @@
+<resources>
+    <string name="app_name">FloatingViewApplication</string>
+
+    <string name="service_available">Service Available</string>
+    <string name="select_your_wagon">Select your wagon</string>
+    <string name="fixed">Fixed</string>
+    <string name="select_your_current_position">Select your <b>current</b> position</string>
+    <string name="select_your_next_position">Select your <b>next</b> position</string>
+    <string name="no_position_selected">Position is not selected!</string>
+    <string name="next_wagon_position_not_selected">Next wagon position is not selected!</string>
+
+    <string name="course_selection_confirm">CONFIRM</string>
+    <string name="save">Save</string>
+</resources>
